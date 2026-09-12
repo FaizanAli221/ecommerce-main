@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product | NexMart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="backend-status" class="backend-status" hidden role="status"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Nex<span>Mart</span></a>
+            <div style="display:flex; align-items:center; gap:1rem;">
+                <a href="/" class="nav-link"><i class='bx bx-arrow-back'></i> Back to Shop</a>
+                <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+                    <i class='bx bx-sun'></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="product-detail-page">
+        <div id="product-detail" class="loading-state">
+            <i class='bx bx-loader-alt bx-spin' style="font-size:2rem"></i>
+            <p>Loading product...</p>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/app-init.js"></script>
+    <script src="/js/product.js"></script>
+</body>
+</html>

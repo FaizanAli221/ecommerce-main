@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | NexMart</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>.page-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem}</style>
+</head>
+<body>
+    <div id="backend-status" class="backend-status" hidden role="status"></div>
+    <header class="mobile-dashboard-header">
+        <button type="button" class="mobile-sidebar-toggle" id="mobile-sidebar-toggle" aria-label="Toggle Menu">
+            <i class='bx bx-menu'></i>
+        </button>
+        <a href="/" class="logo">Nex<span>Mart</span></a>
+        <div class="mobile-vendor-avatar">
+            <i class='bx bxs-user-circle'></i>
+        </div>
+    </header>
+    <div class="admin-container">
+        <aside class="sidebar" id="dashboard-sidebar">
+            <button type="button" class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close menu">
+                <i class='bx bx-x'></i>
+            </button>
+            <a href="/" class="logo">Nex<span>Mart</span></a>
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active" data-panel="overview-panel"><i class='bx bxs-pie-chart-alt-2'></i> Overview</a>
+                <a href="#" class="menu-item" data-panel="users-panel"><i class='bx bxs-user-detail'></i> Users</a>
+                <a href="#" class="menu-item" data-panel="products-panel"><i class='bx bxs-package'></i> Products</a>
+                <a href="#" class="menu-item" data-panel="orders-panel"><i class='bx bxs-cart'></i> Orders</a>
+            </nav>
+            <a href="#" class="menu-item theme-toggle-btn" id="theme-toggle-btn"><i class='bx bx-sun'></i> Toggle Theme</a>
+            <a href="#" id="logout-btn" class="menu-item"><i class='bx bx-log-out'></i> Logout</a>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header"><h1>Admin Dashboard</h1></header>
+
+            <div id="overview-panel" class="panel active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <h3>Total Revenue</h3>
+                            <div class="value" id="stat-revenue">$0</div>
+                        </div>
+                        <div class="stat-card-icon revenue"><i class='bx bx-dollar'></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <h3>Total Users</h3>
+                            <div class="value" id="stat-users">0</div>
+                        </div>
+                        <div class="stat-card-icon users"><i class='bx bx-user'></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <h3>Total Vendors</h3>
+                            <div class="value" id="stat-vendors">0</div>
+                        </div>
+                        <div class="stat-card-icon vendors"><i class='bx bx-store-alt'></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-info">
+                            <h3>Active Orders</h3>
+                            <div class="value" id="stat-orders">0</div>
+                        </div>
+                        <div class="stat-card-icon orders"><i class='bx bx-cart'></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="users-panel" class="panel">
+                <div class="data-table-container">
+                    <h2>Manage Users</h2>
+                    <table>
+                        <thead>
+                            <tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Joined</th><th>Action</th></tr>
+                        </thead>
+                        <tbody id="users-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="products-panel" class="panel">
+                <div class="data-table-container">
+                    <h2>All Products</h2>
+                    <table>
+                        <thead>
+                            <tr><th>Product</th><th>Vendor</th><th>Price</th><th>Stock</th><th>Action</th></tr>
+                        </thead>
+                        <tbody id="products-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="orders-panel" class="panel">
+                <div class="data-table-container">
+                    <h2>All Orders</h2>
+                    <table>
+                        <thead>
+                            <tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th><th>Update</th></tr>
+                        </thead>
+                        <tbody id="orders-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/js/api.js"></script>
+    <script src="/js/app-init.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>
+
+

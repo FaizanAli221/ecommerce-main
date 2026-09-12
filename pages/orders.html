@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | NexMart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="backend-status" class="backend-status" hidden role="status"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Nex<span>Mart</span></a>
+            <div style="display:flex; align-items:center; gap:1rem;">
+                <a href="/" class="nav-link"><i class='bx bx-arrow-back'></i> Back to Shop</a>
+                <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+                    <i class='bx bx-sun'></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="container">
+            <h1>Orders & Tracking</h1>
+            <p>View your orders or track a shipment</p>
+        </div>
+    </div>
+
+    <div class="orders-page">
+        <div class="track-box">
+            <h2><i class='bx bx-search-alt'></i> Track your order</h2>
+            <form id="track-form">
+                <input type="text" id="tracking-input" placeholder="Enter tracking number (e.g. NX...)" required>
+                <button type="submit" class="cta-button">Track</button>
+            </form>
+            <div id="track-result"></div>
+        </div>
+
+        <h2>Order history</h2>
+        <div id="orders-list"></div>
+        <div id="order-detail" style="display:none"></div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/app-init.js"></script>
+    <script src="/js/orders.js"></script>
+</body>
+</html>

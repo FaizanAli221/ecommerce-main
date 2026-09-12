@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexMart | Multi-Vendor Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="backend-status" class="backend-status" hidden role="status" aria-live="polite"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Nex<span>Mart</span></a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search products, brands, vendors...">
+                <button type="button" aria-label="Search"><i class='bx bx-search'></i></button>
+            </div>
+
+            <div class="nav-links">
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#vendors" class="nav-link" id="vendors-link">Vendors</a>
+                
+                <div class="nav-item dropdown" id="account-dropdown">
+                    <a href="#" class="nav-link"><i class='bx bx-user-circle'></i> Account</a>
+                    <div class="dropdown-menu">
+                        <a href="/login"><i class='bx bx-log-in'></i> Login</a>
+                        <a href="/register"><i class='bx bx-user-plus'></i> Register</a>
+                        <a href="/orders"><i class='bx bx-package'></i> My Orders</a>
+                        <a href="/vendor"><i class='bx bx-store'></i> Vendor Portal</a>
+                        <a href="/admin"><i class='bx bx-shield'></i> Admin</a>
+                    </div>
+                </div>
+                
+                <a href="#" class="nav-link cart-icon" id="cart-icon" aria-label="Cart">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </a>
+
+                <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+                    <i class='bx bx-sun'></i>
+                </button>
+            </div>
+            
+            <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-panel">
+            <button type="button" class="mobile-nav-close" id="mobile-nav-close"><i class='bx bx-x'></i></button>
+            <a href="/">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="/orders">My Orders</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/vendor">Sell on NexMart</a>
+            <button type="button" class="theme-toggle-btn" style="margin-top: auto; width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.85rem;" aria-label="Toggle theme">
+                <i class='bx bx-sun'></i> Toggle Theme
+            </button>
+        </div>
+    </div>
+
+    <section class="fashion-hero">
+        <div class="fashion-hero-container">
+            <div class="fashion-hero-content">
+                <span class="fashion-badge">LIFESTYLE & TRENDS</span>
+                <h1 class="fashion-title">Explore a World of<br>Style and Comfort</h1>
+                <p class="fashion-subtitle">Discover our new spring/summer collection. Curated high-fashion wardrobe essentials from global designers, crafted with absolute precision for modern living.</p>
+                <div class="fashion-actions">
+                    <button type="button" class="fashion-btn-primary" id="hero-shop-btn">SHOP THE COLLECTION <i class='bx bx-right-arrow-alt'></i></button>
+                    <a href="/register" class="fashion-btn-secondary">BECOME A VENDOR</a>
+                </div>
+            </div>
+            <div class="fashion-hero-image-wrap">
+                <div class="fashion-hero-image-bg"></div>
+                <img src="/images/hero_model.png" alt="Luxury Fashion Model" class="fashion-hero-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-strip">
+        <div class="partners-container">
+            <span class="partners-label">AS FEATURED IN</span>
+            <div class="partners-logos">
+                <span class="partner-logo">GOOGLE</span>
+                <span class="partner-logo">DRIBBBLE</span>
+                <span class="partner-logo">AMAZON</span>
+                <span class="partner-logo">LINKEDIN</span>
+                <span class="partner-logo">MICROSOFT</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories" id="categories">
+        <div class="section-header">
+            <div>
+                <h2>Shop by Department</h2>
+                <p>Explore curated premium collections from top global sellers</p>
+            </div>
+        </div>
+        <div class="category-grid">
+            <div class="category-card" data-category="Electronics" style="--cat-color: #00f2fe;">
+                <div class="category-card-content">
+                    <i class='bx bx-laptop'></i>
+                    <h3>Electronics</h3>
+                </div>
+            </div>
+            <div class="category-card" data-category="Fashion" style="--cat-color: #a855f7;">
+                <div class="category-card-content">
+                    <i class='bx bx-closet'></i>
+                    <h3>Fashion</h3>
+                </div>
+            </div>
+            <div class="category-card" data-category="Home & Living" style="--cat-color: #f43f5e;">
+                <div class="category-card-content">
+                    <i class='bx bx-home-heart'></i>
+                    <h3>Home & Living</h3>
+                </div>
+            </div>
+            <div class="category-card" data-category="Sports" style="--cat-color: #10b981;">
+                <div class="category-card-content">
+                    <i class='bx bx-football'></i>
+                    <h3>Sports</h3>
+                </div>
+            </div>
+            <div class="category-card" data-category="Beauty" style="--cat-color: #ec4899;">
+                <div class="category-card-content">
+                    <i class='bx bx-spa'></i>
+                    <h3>Beauty</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="products-layout-wrapper">
+            <!-- Sidebar Filters -->
+            <aside class="filters-sidebar" id="filters-sidebar">
+                <div class="sidebar-header">
+                    <h3><i class='bx bx-slider-alt'></i> Filters</h3>
+                    <button type="button" class="clear-filters-btn" id="clear-filters-btn">Clear All</button>
+                </div>
+                
+                <div class="filter-group">
+                    <h4>Categories</h4>
+                    <div class="checkbox-list">
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" name="category" value="Electronics">
+                            <span class="checkmark"></span> Electronics
+                        </label>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" name="category" value="Fashion">
+                            <span class="checkmark"></span> Fashion
+                        </label>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" name="category" value="Home & Living">
+                            <span class="checkmark"></span> Home & Living
+                        </label>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" name="category" value="Sports">
+                            <span class="checkmark"></span> Sports
+                        </label>
+                        <label class="filter-checkbox-label">
+                            <input type="checkbox" name="category" value="Beauty">
+                            <span class="checkmark"></span> Beauty
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <div class="price-slider-container">
+                        <div class="price-range-values">
+                            <span>$0</span>
+                            <span id="price-slider-val">$1000</span>
+                        </div>
+                        <input type="range" id="price-slider-input" min="0" max="1000" value="1000" class="price-slider">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Filter by Color</h4>
+                    <div class="color-swatches">
+                        <button type="button" class="color-swatch active" data-color="all" style="background: linear-gradient(45deg, #ccc, #666);" title="All Colors"></button>
+                        <button type="button" class="color-swatch" data-color="black" style="background: #000000; border: 1px solid var(--border);" title="Black"></button>
+                        <button type="button" class="color-swatch" data-color="white" style="background: #ffffff; border: 1px solid #ddd;" title="White"></button>
+                        <button type="button" class="color-swatch" data-color="blue" style="background: #2563eb;" title="Blue"></button>
+                        <button type="button" class="color-swatch" data-color="red" style="background: #dc2626;" title="Red"></button>
+                        <button type="button" class="color-swatch" data-color="yellow" style="background: #f59e0b;" title="Yellow"></button>
+                        <button type="button" class="color-swatch" data-color="green" style="background: #16a34a;" title="Green"></button>
+                        <button type="button" class="color-swatch" data-color="pink" style="background: #ec4899;" title="Pink"></button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Products Showcase Grid -->
+            <div class="products-showcase-wrapper">
+                <div class="section-header">
+                    <div>
+                        <h2>Trending Masterpieces</h2>
+                        <p>Handpicked elite choices from top-rated sellers</p>
+                    </div>
+                    <div class="filter-tabs">
+                        <button class="active" type="button">All</button>
+                        <button type="button">Electronics</button>
+                        <button type="button">Fashion</button>
+                        <button type="button">Top Rated</button>
+                    </div>
+                </div>
+                
+                <div class="product-grid" id="product-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vendor-cta" id="vendors">
+        <div class="vendor-cta-grid">
+            <div class="vendor-cta-content">
+                <h2>Scale Your Vision on <span>NexMart</span></h2>
+                <p>Join the next generation of global commerce. Reach thousands of digital buyers, manage inventory with professional telemetry tools, and build a lasting business with complete agency.</p>
+                <button type="button" class="btn-primary">Become a Vendor <i class='bx bx-store-alt'></i></button>
+            </div>
+            <div class="vendor-cta-features">
+                <div class="v-feature-card">
+                    <i class='bx bx-percentage'></i>
+                    <div class="v-feature-info">
+                        <h4>0% Commission Fees</h4>
+                        <p>Keep 100% of your earnings for the first 30 days</p>
+                    </div>
+                </div>
+                <div class="v-feature-card">
+                    <i class='bx bx-bolt'></i>
+                    <div class="v-feature-info">
+                        <h4>Instant Settlement</h4>
+                        <p>Funds clear directly to your merchant wallet upon shipping</p>
+                    </div>
+                </div>
+                <div class="v-feature-card">
+                    <i class='bx bx-globe'></i>
+                    <div class="v-feature-info">
+                        <h4>Advanced Seller Suite</h4>
+                        <p>Automated global logistics, SEO telemetry, and multi-currency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Nex<span>Mart</span></h3>
+                <p>Your trusted multi-vendor marketplace for seamless shopping and selling worldwide.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="/">Home</a>
+                <a href="#products">Products</a>
+                <a href="#categories">Categories</a>
+                <a href="/orders">Track Order</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Returns</a>
+                <a href="#">Shipping</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Get deals and updates in your inbox.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="you@email.com">
+                    <button type="button" aria-label="Subscribe"><i class='bx bx-send'></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NexMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button type="button" class="close-cart" id="close-cart" aria-label="Close"><i class='bx bx-x'></i></button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button type="button" class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </aside>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <button type="button" class="close-modal" id="close-modal" aria-label="Close"><i class='bx bx-x'></i></button>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/app-init.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | NexMart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/pages.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="backend-status" class="backend-status" hidden role="status"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Nex<span>Mart</span></a>
+            <div style="display:flex; align-items:center; gap:1rem;">
+                <a href="/" class="nav-link"><i class='bx bx-arrow-back'></i> Continue Shopping</a>
+                <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+                    <i class='bx bx-sun'></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <h1>Checkout</h1>
+            <p>Complete your order — free shipping on orders over $500</p>
+        </div>
+    </div>
+
+    <div class="checkout-container">
+        <div class="checkout-form">
+            <h2>Shipping details</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First name</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label>Last name</label>
+                    <input type="text" id="lastName" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Street address</label>
+                <input type="text" id="address" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" id="city" required>
+                </div>
+                <div class="form-group">
+                    <label>ZIP code</label>
+                    <input type="text" id="zipCode" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Phone (optional)</label>
+                <input type="tel" id="phone">
+            </div>
+
+            <h2 class="section-gap">Payment</h2>
+            <div class="payment-options">
+                <button type="button" class="selected" data-payment="card">
+                    <i class='bx bxl-visa'></i> Card
+                </button>
+                <button type="button" data-payment="paypal">
+                    <i class='bx bxl-paypal'></i> PayPal
+                </button>
+                <button type="button" data-payment="cod">
+                    <i class='bx bx-money'></i> COD
+                </button>
+            </div>
+
+            <button type="button" id="place-order-btn" class="cta-button checkout-submit">
+                Place Order <i class='bx bx-lock-alt'></i>
+            </button>
+        </div>
+
+        <aside class="summary-card">
+            <h3>Order summary</h3>
+            <div id="checkout-summary" class="summary-items"></div>
+            <div class="summary-item"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+            <div class="summary-item"><span>Shipping</span><span id="shipping">$0.00</span></div>
+            <div class="summary-item total-row"><span>Total</span><span id="final-total">$0.00</span></div>
+        </aside>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/app-init.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/checkout.js"></script>
+</body>
+</html>
